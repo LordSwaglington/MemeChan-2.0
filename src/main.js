@@ -15,7 +15,7 @@ const cmdFiles = fs
     .readdirSync('./src/commands/')
     .filter(file => file.endsWith('.js'));
 for (const file of cmdFiles) {
-    const command = require(`./src/commands/${file}`);
+    const command = require(`./commands/${file}`);
     client.commands.set(command.name, command);
 }
 
@@ -26,4 +26,33 @@ client.login(token);
 client.on('ready', () => {
     console.log('MemeChan is online');
     client.user.setActivity('with reddit-chan');
+});
+
+// on client message
+client.on('message', msg => {
+    // clean up message
+    let message = msg.content.toLowerCase().trim();
+    // if a command is called
+    if (message.startsWith(PREFIX)) {
+        // remove prefix and split command into parts
+        let args = message
+            .substring(PREFIX.length)
+            .trim()
+            .split(' ');
+
+        // loop through commands
+        switch (args[0]) {
+            // help command
+            case 'help':
+                console.log('!help received');
+                client.commands.get('help').execute(msg, client);
+                break;
+
+            case 'meme':
+                break;
+
+            case 'spam':
+                break;
+        }
+    }
 });

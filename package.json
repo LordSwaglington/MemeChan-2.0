@@ -1,0 +1,15 @@
+{
+    "name": "memechan",
+    "version": "2.0.0",
+    "description": "new and improved memechan",
+    "main": "main.js",
+    "scripts": {
+        "start": "node src/main.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/LordSwaglington/MemeChan-2.0"
+    },
+    "author": "LordSwaglington",
+    "license": "MIT"
+}

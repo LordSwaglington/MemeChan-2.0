@@ -11,5 +11,8 @@
         "url": "https://github.com/LordSwaglington/MemeChan-2.0"
     },
     "author": "LordSwaglington",
-    "license": "MIT"
+    "license": "MIT",
+    "dependencies": {
+        "discord.js": "^12.0.2"
+    }
 }

@@ -42,9 +42,11 @@ async function spamMeme(msg) {
         if (module.exports.spam == false) {
             return;
         } else {
-            reddit.getMeme(msg, module.exports.user).catch(console.error);
+            reddit
+                .getPost(msg, module.exports.user, 'memes', 'meme')
+                .catch(console.error);
 
-            setTimeout(check, config.spamDelay); // check again in 5 second
+            setTimeout(check, config.spamDelay);
         }
     };
     check();

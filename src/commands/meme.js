@@ -12,6 +12,8 @@ module.exports = {
             user = msg.author;
         }
 
-        let data = await reddit.getMeme(msg, user).catch(console.error);
+        let data = await reddit
+            .getPost(msg, user, 'memes', 'meme')
+            .catch(console.error);
     }
 };

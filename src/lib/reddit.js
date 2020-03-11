@@ -7,14 +7,14 @@ const replies = require('./replies');
 const { MessageEmbed } = require('discord.js');
 
 module.exports = {
-    getMeme: async function(msg, user) {
-        let data = await checkCache()
+    getPost: async function(msg, user, cacheName, replyType) {
+        let data = await checkCache(cacheName)
             .then(value => {
                 let post = value.data[utils.randomRange(value.data.length)];
                 // return post;
 
                 // workaround: currently making embed here instead of meme.js because async functions suck
-                msg.channel.send(replies.getReplyWithUser(user));
+                msg.channel.send(replies.getReplyWithUser(user, replyType));
                 const embed = new MessageEmbed()
                     .setTitle(post.title.substring(0, 256))
                     .setImage(post.imgUrl)
@@ -31,29 +31,29 @@ module.exports = {
     }
 };
 
-async function checkCache() {
+async function checkCache(cacheName) {
     let date = utils.date();
     if (config.cacheDate == date) {
         // do stuff
         console.log('getting data from cache');
-        return utils.readFromCache();
+        return utils.readFromCache(cacheName);
     } else {
         // refresh cashe
         console.log('refreshing cached data');
-        await getData();
-        return utils.readFromCache();
+        await getData(cacheName);
+        return utils.readFromCache(cacheName);
     }
 }
 
-async function getData() {
-    utils.clearCache();
-    config.rditList.forEach(subreddit => {
+async function getData(cacheName) {
+    utils.clearCache(cacheName);
+    config.rditList[cacheName].forEach(subreddit => {
         console.log('fetching ' + subreddit);
-        fetchData(subreddit);
+        fetchData(subreddit, cacheName);
     });
 }
 
-async function fetchData(sub) {
+async function fetchData(sub, cacheName) {
     const url = `https://www.reddit.com/r/${sub}/hot.json?limit=50`;
 
     var options = {
@@ -81,11 +81,11 @@ async function fetchData(sub) {
             return;
         }
 
-        return processData(jsonData);
+        return processData(jsonData, cacheName);
     });
 }
 
-function processData(data) {
+function processData(data, cacheName) {
     let posts = [];
 
     data.data.children.forEach(child => {
@@ -105,5 +105,5 @@ function processData(data) {
         }
     });
 
-    utils.appendCache(posts);
+    utils.appendCache(posts, cacheName);
 }

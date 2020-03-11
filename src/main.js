@@ -27,7 +27,8 @@ client.login(token);
 client.on('ready', () => {
     console.log('MemeChan is online');
     client.user.setActivity('with reddit-chan');
-    utils.initCache();
+
+    utils.initCache('memes');
 });
 
 // on client message

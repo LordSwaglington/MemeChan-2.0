@@ -3,50 +3,55 @@
 const fs = require('fs');
 const config = require('./config');
 
-const cachePath = './src/data/cache.json';
-const repliesPath = './src/data/replies.json';
+const cachePath = './src/data/cache/';
 
 module.exports = {
     // cache functions
 
     // writes data to cache
     // overrides old data
-    writeToCache: function(data = []) {
+    writeToCache: function(data = [], name) {
         let date = this.date();
         config.cacheDate = date;
-        fs.writeFileSync(cachePath, JSON.stringify({ date: date, data: data }));
+        fs.writeFileSync(
+            `${cachePath}${name}.json`,
+            JSON.stringify({ date: date, data: data })
+        );
     },
     // returns saved cache data
-    readFromCache: function() {
-        let str = fs.readFileSync(cachePath, 'utf8');
+    readFromCache: function(name) {
+        let str = fs.readFileSync(`${cachePath}${name}.json`, 'utf8');
         let jsonData = JSON.parse(str);
         return jsonData;
     },
     // removes all data from cache
-    clearCache: function() {
-        this.writeToCache([]);
+    clearCache: function(name) {
+        this.writeToCache([], name);
     },
     // adds data to cache
     // does not override old data
-    appendCache: function(data) {
-        let cachedData = this.readFromCache();
+    appendCache: function(data, name) {
+        let cachedData = this.readFromCache(name);
         cachedData.data = cachedData.data.concat(data);
-        fs.writeFileSync(cachePath, JSON.stringify(cachedData));
+        fs.writeFileSync(
+            `${cachePath}${name}.json`,
+            JSON.stringify(cachedData)
+        );
     },
-    initCache: function() {
+    initCache: function(name) {
         // if cache doesnt exist create it
         // cache is not pushed to git
         // so we need to check it
-        if (!fs.existsSync(cachePath)) {
-            fs.writeFileSync(cachePath, '{}');
+        if (!fs.existsSync(`${cachePath}${name}.json`)) {
+            fs.writeFileSync(`${cachePath}${name}.json`, '{}');
             config.cacheDate = '';
         } else {
-            let data = this.readFromCache();
+            let data = this.readFromCache(name);
             let date = data.date;
             config.cacheDate = date;
         }
 
-        console.log('cache initialized');
+        console.log(`${name} cache initialized`);
     },
 
     // utility functions

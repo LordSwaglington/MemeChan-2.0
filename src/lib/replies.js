@@ -13,8 +13,8 @@ module.exports = {
         let reply = jsonData[type][utils.randomRange(jsonData[type].length)];
         return reply;
     },
-    getReplyWithUser(user) {
-        let reply = this.getReply('user');
+    getReplyWithUser(user, type) {
+        let reply = this.getReply(type);
         reply = reply.replace('<user>', user);
         return reply;
     }

@@ -4,6 +4,7 @@ require('dotenv').config();
 
 const Discord = require('discord.js');
 const fs = require('fs');
+const utils = require('./lib/utils');
 
 const client = new Discord.Client();
 const token = process.env.TOKEN;
@@ -26,6 +27,7 @@ client.login(token);
 client.on('ready', () => {
     console.log('MemeChan is online');
     client.user.setActivity('with reddit-chan');
+    utils.initCache();
 });
 
 // on client message
@@ -48,7 +50,10 @@ client.on('message', msg => {
                 client.commands.get('help').execute(msg, client);
                 break;
 
+            // meme command
             case 'meme':
+                console.log('!meme received');
+                client.commands.get('meme').execute(msg, client);
                 break;
 
             case 'spam':

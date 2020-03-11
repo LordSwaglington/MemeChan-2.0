@@ -1,16 +1,20 @@
+'use strict';
+
 const request = require('request');
 const config = require('./config');
 const utils = require('./utils');
+const replies = require('./replies');
 const { MessageEmbed } = require('discord.js');
 
 module.exports = {
-    getMeme: async function(msg) {
+    getMeme: async function(msg, user) {
         let data = await checkCache()
             .then(value => {
                 let post = value.data[utils.randomRange(value.data.length)];
                 // return post;
 
                 // workaround: currently making embed here instead of meme.js because async functions suck
+                msg.channel.send(replies.getReplyWithUser(user));
                 const embed = new MessageEmbed()
                     .setTitle(post.title.substring(0, 256))
                     .setImage(post.imgUrl)

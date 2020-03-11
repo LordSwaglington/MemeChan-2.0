@@ -6,6 +6,12 @@ module.exports = {
     name: 'meme',
     description: 'sends memes',
     async execute(msg, client) {
-        let data = await reddit.getMeme(msg).catch(console.error);
+        // get mention or author
+        let user = msg.mentions.members.first();
+        if (user == undefined || user.id == config.botID) {
+            user = msg.author;
+        }
+
+        let data = await reddit.getMeme(msg, user).catch(console.error);
     }
 };

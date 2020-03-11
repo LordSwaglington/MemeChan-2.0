@@ -57,6 +57,13 @@ client.on('message', msg => {
                 break;
 
             case 'spam':
+                console.log('!spam received');
+                client.commands.get('spam').execute(msg, client);
+                break;
+
+            case 'stop':
+                console.log('!stop received');
+                client.commands.get('stop').execute(msg, client);
                 break;
         }
     }

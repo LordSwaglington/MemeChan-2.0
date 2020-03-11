@@ -7,11 +7,27 @@ module.exports = {
     name: 'spam',
     description: 'spam someone with memes',
     spam: false,
+    author: '',
+    user: '',
     async execute(msg, client) {
         if (this.spam == true) {
             msg.channel.send(replies.getReply('duplicate'));
             return;
         } else {
+            this.author = msg.author;
+
+            // get mention or author
+            this.user = msg.mentions.members.first();
+            if (this.user == undefined) {
+                this.user = msg.author;
+            }
+
+            // avoid bot spam
+            if (this.user.id == config.botID) {
+                msg.channel.send(replies.getReply('self'));
+                return;
+            }
+
             this.spam = true;
         }
 
@@ -26,19 +42,7 @@ async function spamMeme(msg) {
         if (module.exports.spam == false) {
             return;
         } else {
-            // get mention or author
-            let user = msg.mentions.members.first();
-            if (user == undefined) {
-                user = msg.author;
-            }
-
-            // avoid bot spam
-            if (user.id == config.botID) {
-                msg.channel.send(replies.getReply('self'));
-                return;
-            }
-
-            reddit.getMeme(msg, user).catch(console.error);
+            reddit.getMeme(msg, module.exports.user).catch(console.error);
 
             setTimeout(check, config.spamDelay); // check again in 5 second
         }

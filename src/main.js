@@ -65,6 +65,15 @@ client.on('message', msg => {
                 console.log('!stop received');
                 client.commands.get('stop').execute(msg, client);
                 break;
+
+            case 'uno':
+                if (message.includes('uno reverse card')) {
+                    console.log('!revese received');
+                    client.commands
+                        .get('uno reverse card')
+                        .execute(msg, client);
+                }
+                break;
         }
     }
 });

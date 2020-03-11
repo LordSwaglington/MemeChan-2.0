@@ -74,6 +74,10 @@ client.on('message', msg => {
                         .execute(msg, client);
                 }
                 break;
+
+            case 'kill':
+                client.commands.get('kill').execute(msg, client);
+                break;
         }
     }
 });

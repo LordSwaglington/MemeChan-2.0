@@ -102,4 +102,7 @@ dist
 
 # TernJS port file
 .tern-port
-src/data/cache/
+
+#cache
+src/data/cache/*
+!src/data/cache/cached_data_goes_here

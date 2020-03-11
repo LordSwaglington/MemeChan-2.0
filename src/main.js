@@ -78,10 +78,12 @@ client.on('message', msg => {
                 break;
 
             case 'kill':
+                console.log('!kill received');
                 client.commands.get('kill').execute(msg, client);
                 break;
 
             case 'hentai':
+                console.log('!nsfw received');
                 client.commands.get('hentai').execute(msg, client);
                 break;
         }

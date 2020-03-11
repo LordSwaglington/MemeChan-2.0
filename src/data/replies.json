@@ -9,6 +9,12 @@
         "Look! <user>! I got you a meme!",
         "<user>! Look! A meme!"
     ],
+    "nsfw": [
+        "Hentai with Senpai!",
+        "Daring aren't we?",
+        "Ooh Lewd!",
+        "That's Lewd!"
+    ],
     "duplicate": [
         "I'm already spamming someone!",
         "I can only spam one person at a time!",

@@ -41,6 +41,16 @@ module.exports = {
             'ProgrammerAnimemes',
             'shittyrainbow6',
             'SkyrimMemes'
+        ],
+        nsfw: [
+            'ahageo',
+            'ecchi',
+            'hentai',
+            'hentai_irl',
+            'HENTAI_GIF',
+            'hentaibondage',
+            'yuri',
+            'wholesomehentai'
         ]
     }
 };

@@ -29,6 +29,7 @@ client.on('ready', () => {
     client.user.setActivity('with reddit-chan');
 
     utils.initCache('memes');
+    utils.initCache('nsfw');
 });
 
 // on client message
@@ -78,6 +79,10 @@ client.on('message', msg => {
 
             case 'kill':
                 client.commands.get('kill').execute(msg, client);
+                break;
+
+            case 'hentai':
+                client.commands.get('hentai').execute(msg, client);
                 break;
         }
     }

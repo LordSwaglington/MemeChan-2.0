@@ -3,7 +3,7 @@
 module.exports = {
     botColor: 0x33ffb2,
     botID: '635081152088244240',
-    spamDelay: 2500,
+    spamDelay: 3500,
     cacheDate: '',
 
     rditList: {

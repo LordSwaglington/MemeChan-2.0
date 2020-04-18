@@ -39,6 +39,7 @@ module.exports = {
             'MinecraftMemes',
             'nukedmemes',
             'ProgrammerAnimemes',
+            'ShitPostCrusaders',
             'shittyrainbow6',
             'SkyrimMemes'
         ],

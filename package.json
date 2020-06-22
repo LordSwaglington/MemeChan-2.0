@@ -1,20 +1,20 @@
 {
-    "name": "memechan",
-    "version": "2.0.0",
-    "description": "new and improved memechan",
-    "main": "main.js",
-    "scripts": {
-        "start": "node src/main.js"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/LordSwaglington/MemeChan-2.0"
-    },
-    "author": "LordSwaglington",
-    "license": "MIT",
-    "dependencies": {
-        "discord.js": "^12.0.2",
-        "dotenv": "^8.2.0",
-        "request": "^2.88.2"
-    }
+	"name": "memechan",
+	"version": "2.0.0",
+	"description": "new and improved memechan",
+	"main": "main.js",
+	"scripts": {
+		"start": "node src/main.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/LordSwaglington/MemeChan-2.0"
+	},
+	"author": "LordSwaglington",
+	"license": "MIT",
+	"dependencies": {
+		"discord.js": "^12.0.2",
+		"dotenv": "^8.2.0",
+		"node-fetch": "^2.6.0"
+	}
 }

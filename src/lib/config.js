@@ -5,7 +5,7 @@ module.exports = {
 	botID: '635081152088244240',
 	spamDelay: 3500,
 	cacheDate: '',
-	postLimit: 3,
+	postLimit: 50,
 
 	rditList: {
 		memes: [

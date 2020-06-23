@@ -1,15 +1,12 @@
-const config = require('../lib/config');
-//const reddit = require('../lib/reddit');
+const spamHandler = require('../lib/spamHandler');
 const replies = require('../lib/replies');
 
 module.exports = {
 	name: 'stop',
 	description: 'stops the spam',
-	async execute(msg, client) {
-		/*if (client.commands.get('spam').spam == true) {
-			client.commands.get('spam').spam = false;
+	execute(msg, client) {
+		if (spamHandler.removeUser(msg.channel.id)) {
 			msg.channel.send(replies.getReply('stop'));
-			return;
-		}*/
+		}
 	}
 };

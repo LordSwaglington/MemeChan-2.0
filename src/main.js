@@ -33,6 +33,7 @@ client.on('ready', () => {
 client.on('message', (msg) => {
 	// clean up message
 	let message = msg.content.toLowerCase().trim();
+
 	// if a command is called
 	if (message.startsWith(PREFIX)) {
 		// remove prefix and split command into parts
@@ -54,7 +55,7 @@ client.on('message', (msg) => {
 
 			case 'spam':
 				console.log('!spam received');
-				client.commands.get('autoMeme').execute(msg, client);
+				client.commands.get('spam').execute(msg, client);
 				break;
 
 			case 'stop':

@@ -1,6 +1,6 @@
 const { MessageEmbed } = require('discord.js');
 const config = require('../lib/config');
-const reddit = require('../lib/dataHandler');
+const rdit = require('../lib/rdit');
 const replies = require('../lib/replies');
 
 module.exports = {
@@ -10,7 +10,7 @@ module.exports = {
 	author: '',
 	user: '',
 	async execute(msg, client) {
-		if (this.spam == true) {
+		/*if (this.spam == true) {
 			msg.channel.send(replies.getReply('duplicate'));
 			return;
 		} else {
@@ -31,7 +31,7 @@ module.exports = {
 			this.spam = true;
 		}
 
-		spamMeme(msg);
+		spamMeme(msg);*/
 	}
 };
 

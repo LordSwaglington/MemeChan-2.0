@@ -54,7 +54,7 @@ client.on('message', (msg) => {
 
 			case 'spam':
 				console.log('!spam received');
-				client.commands.get('spam').execute(msg, client);
+				client.commands.get('autoMeme').execute(msg, client);
 				break;
 
 			case 'stop':

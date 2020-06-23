@@ -1,6 +1,7 @@
 'use strict';
 
 const fetch = require('node-fetch');
+const config = require('./config');
 
 /**
  * gets data from subreddit
@@ -8,7 +9,7 @@ const fetch = require('node-fetch');
  * @returns {JSON} - json data
  */
 const getData = async (sub) => {
-	const url = `https://www.reddit.com/r/${sub}/hot.json?limit=1`;
+	const url = `https://www.reddit.com/r/${sub}/hot.json?limit=${config.postLimit}`;
 
 	const results = await fetch(url, {
 		method: 'GET',

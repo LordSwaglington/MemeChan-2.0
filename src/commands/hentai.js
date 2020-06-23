@@ -1,6 +1,7 @@
 const { MessageEmbed } = require('discord.js');
 const config = require('../lib/config');
-const reddit = require('../lib/reddit');
+const rdit = require('../lib/rdit');
+const replies = require('../lib/replies');
 
 module.exports = {
 	name: 'hentai',
@@ -12,8 +13,9 @@ module.exports = {
 			user = msg.author;
 		}
 
-		let data = await reddit
-			.getPost(msg, user, 'nsfw', 'nsfw')
-			.catch(console.error);
+		const embed = await rdit.createPost('nsfw');
+
+		msg.channel.send(replies.getReplyWithUser(user, 'nsfw'));
+		msg.channel.send(embed);
 	}
 };

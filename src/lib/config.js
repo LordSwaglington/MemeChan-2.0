@@ -5,6 +5,7 @@ module.exports = {
 	botID: '635081152088244240',
 	spamDelay: 3500,
 	cacheDate: '',
+	postLimit: 3,
 
 	rditList: {
 		memes: [
@@ -17,7 +18,6 @@ module.exports = {
 			'animeirl',
 			'Animemes',
 			'BikiniBottomTwitter',
-			'dank_meme',
 			'dankmemes',
 			'DarkHumorAndMemes',
 			'depression_memes',

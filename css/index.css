@@ -1,0 +1,417 @@
+:root {
+    --txt-outline: -4px -4px 0 #fff, 4px -4px 0 #fff, -4px 4px 0 #fff, 4px 4px 0 #fff,
+        0px -4px 0 #fff, 0px 4px 0 #fff;
+    --txt-outline-sm: -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff, 2px 2px 0 #fff,
+        0px -2px 0 #fff, 0px 2px 0 #fff;
+}
+
+/*
+    Fonts
+*/
+
+@font-face {
+    font-family: 'MainFont';
+    src: url('../fonts/Comfortaa-Regular.ttf');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'MainFont';
+    src: url('../fonts/Comfortaa-Bold.ttf');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'HeaderFont';
+    src: url('../fonts/animeace2_reg.ttf');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'TitleFont';
+    src: url('../fonts/animeace2_ital.ttf');
+    font-weight: normal;
+}
+
+/*
+    Generic
+*/
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+
+    font-family: 'MainFont', sans-serif;
+    font-size: 20px;
+
+    background-color: #241224;
+    color: #ffd9ff;
+}
+
+::selection {
+    background-color: #cf004f;
+    color: #fff;
+    opacity: 1;
+}
+
+/*
+    Fancy Scrolling Header Background Thingy!!
+*/
+
+.bg-container {
+    background-color: #fffaff;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    height: 100%;
+    width: 100%;
+
+    overflow: hidden;
+}
+
+.bg-image {
+    position: absolute;
+    left: -64px;
+    top: -64px;
+
+    background-image: url('../images/bg.png');
+    background-size: 64px;
+    background-repeat: repeat;
+
+    height: calc(100% + 64px);
+    width: calc(100% + 64px);
+
+    animation-name: move;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes move {
+    form {
+        transform: translate(0, 0);
+    }
+    to {
+        transform: translate(64px, 64px);
+    }
+}
+
+/*
+    Header
+*/
+
+.header {
+    width: 100%;
+    height: 512px;
+    position: relative;
+}
+
+.header-content {
+    position: absolute;
+    top: 128px;
+    left: calc(50% - 512px);
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1024px;
+}
+
+.header-img-container {
+    position: relative;
+    width: 256px;
+    height: 256px;
+}
+
+.header-img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 256px;
+    height: 256px;
+    border-radius: 100%;
+
+    box-sizing: border-box;
+    border: solid 2px #ffd9ff;
+    box-shadow: 0 0 32px #fd72fd;
+}
+
+.header-title {
+    font-size: 56px;
+    text-align: center;
+    line-height: 1;
+    font-family: 'HeaderFont', sans-serif;
+    font-weight: normal;
+
+    margin: 0 64px;
+
+    color: #f89ff8;
+    text-shadow: var(--txt-outline);
+}
+
+.header-title--subtitle {
+    font-size: 24px;
+    text-shadow: var(--txt-outline-sm);
+}
+
+/*
+    Image overlay effect thingy!!
+    These took me 2 hours to align i want to die!!!
+*/
+
+.header-img-overlay {
+    position: absolute;
+    left: -16px;
+    top: -16px;
+    width: 288px;
+    height: 288px;
+
+    z-index: 15;
+    border-radius: 100%;
+}
+
+.header-img-overlay--jj {
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    border-radius: 0%;
+}
+
+.header-img-overlay--jj-0 {
+    left: 8px;
+    top: -16px;
+}
+
+.header-img-overlay--jj-1 {
+    left: -32px;
+    top: 80px;
+}
+
+.header-img-overlay--jj-2 {
+    left: 180px;
+    top: 220px;
+}
+
+.header-img-overlay--jj-3 {
+    left: 220px;
+    top: 124px;
+}
+
+/*
+    Navbar
+*/
+
+.navbar {
+    background-color: #ffd9ff;
+    border-top: solid 4px #fff;
+    border-bottom: solid 4px #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar > a {
+    padding: 16px;
+    margin: 16px 16px;
+
+    background-color: #fd72fd;
+    box-sizing: border-box;
+    border: solid 4px #fff;
+    border-radius: 48px;
+    width: 160px;
+
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+}
+
+/*
+    Sections
+*/
+
+.section {
+    width: 512px;
+    margin: 0 auto;
+    margin-top: 128px;
+}
+
+.section-title {
+    font-size: 32px;
+    font-family: 'TitleFont', sans-serif;
+
+    line-height: 1;
+    color: #f89ff8;
+
+    position: relative;
+}
+
+.section-title span {
+    position: absolute;
+    left: 180px;
+    bottom: -16px;
+
+    color: #cf004f;
+    font-size: 16px;
+}
+
+/*
+    Commands
+*/
+
+.cmd-container {
+    width: 768px;
+    margin: 0 auto;
+}
+
+.cmd-header {
+    display: flex;
+    align-items: center;
+
+    width: 768px;
+    height: 256px;
+    margin: 0 auto;
+}
+
+.cmd-title {
+    margin: 0;
+    padding: 16px;
+
+    font-family: 'TitleFont', sans-serif;
+    font-size: 32px;
+    color: #f89ff8;
+}
+
+.cmd-aside {
+    margin: 0;
+    padding: 8px 16px;
+    padding-bottom: 0px;
+    font-size: 12px;
+}
+
+.cmd-aside > span {
+    color: #cf004f;
+    font-weight: bold;
+}
+
+.cmd-line {
+    border: none;
+    border-top: solid 1px #fd72fd;
+    margin: 16px 0;
+}
+
+.cmd-divider {
+    border: none;
+    border-top: solid 1px #362136;
+    margin: 16px 0;
+}
+
+.cmd-row {
+    display: block;
+    position: relative;
+
+    margin-bottom: 16px;
+    background-color: #362136;
+    border-radius: 4px;
+}
+
+.cmd-name {
+    display: block;
+
+    margin: 0;
+    padding: 16px;
+    padding-bottom: 0;
+
+    color: #fffaff;
+    font-weight: bold;
+}
+
+.cmd-desc {
+    margin: 0;
+    padding: 16px;
+    padding-top: 8px;
+    font-size: 16px;
+}
+
+.cmd-warn {
+    position: absolute;
+    left: 16px;
+    top: -6px;
+
+    color: #cf004f;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.cmd-list {
+    list-style: none;
+    padding: 0 16px;
+    padding-bottom: 16px;
+    margin: 0;
+}
+
+.cmd-list-title {
+    margin: 0;
+    padding: 0;
+    padding-top: 16px;
+
+    font-size: 16px;
+}
+
+.cmd-list-item {
+    margin: 0;
+    padding: 0 16px;
+    padding-top: 8px;
+    font-size: 16px;
+}
+
+.cmd-list-divider {
+    border: none;
+    border-top: solid 1px #fd72fd;
+    margin: 0;
+}
+
+/*
+    Commands fold
+*/
+
+.btn-foldable {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    width: 80px;
+    height: 80px;
+}
+
+.btn-foldable > svg {
+    transform: rotate(180deg);
+    transition: 0.2s transform;
+    fill: #fffaff;
+}
+
+.btn--fold > svg {
+    transform: rotate(0deg);
+}
+
+.foldable {
+    will-change: height;
+    height: 0;
+    overflow: hidden;
+    transition: 0.2s height;
+}
+
+.foldable--fold {
+    height: auto;
+}

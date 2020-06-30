@@ -19,3 +19,18 @@ const toggleFold = (btn) => {
         btn.nextElementSibling.classList.remove('foldable--fold');
     }
 };
+
+/*
+because i am lazy and i want to copy paste this later
+<div class="btn-foldable"></div>
+
+                    <div class="foldable">
+                        <ul class="cmd-list">
+                            <hr class="cmd-list-divider" />
+                            <p class="cmd-list-title">subreddits list</p>
+                            <li class="cmd-list-item">r/memes</li>
+                            <li class="cmd-list-item">r/memes</li>
+                        </ul>
+                    </div>
+
+*/

@@ -313,6 +313,10 @@ body {
     margin: 16px 0;
 }
 
+/*
+    actual commands layout
+*/
+
 .cmd-row {
     display: block;
     position: relative;
@@ -333,12 +337,23 @@ body {
     font-weight: bold;
 }
 
+.cmd-name > span {
+    color: #998d97;
+    font-size: 80%;
+    font-weight: normal;
+    font-style: italic;
+}
+
 .cmd-desc {
     margin: 0;
     padding: 16px;
     padding-top: 8px;
     font-size: 16px;
 }
+
+/*
+    Top labels
+*/
 
 .cmd-warn {
     position: absolute;
@@ -349,6 +364,20 @@ body {
     font-weight: bold;
     font-size: 12px;
 }
+
+.cmd-info {
+    position: absolute;
+    left: 16px;
+    top: -6px;
+
+    color: #998d97;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+/*
+    expandable lists
+*/
 
 .cmd-list {
     list-style: none;
@@ -414,4 +443,19 @@ body {
 
 .foldable--fold {
     height: auto;
+}
+
+/*
+    Footer
+*/
+
+.footer {
+    margin: auto;
+    margin-top: 512px;
+    padding: 16px;
+    width: 768px;
+
+    font-size: 12px;
+    text-align: center;
+    color: #998d97;
 }

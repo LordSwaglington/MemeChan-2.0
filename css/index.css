@@ -6,7 +6,9 @@
 }
 
 /*
+    -----    
     Fonts
+    -----
 */
 
 @font-face {
@@ -34,7 +36,9 @@
 }
 
 /*
+    -----
     Generic
+    -----
 */
 
 html,
@@ -58,8 +62,20 @@ body {
     opacity: 1;
 }
 
+/* Mobile version */
+@media only screen and (max-width: 767px) {
+    html,
+    body {
+        font-size: 14px;
+    }
+}
+
 /*
+    -----
+    Background
+    ---
     Fancy Scrolling Header Background Thingy!!
+    -----
 */
 
 .bg-container {
@@ -103,7 +119,9 @@ body {
 }
 
 /*
+    -----
     Header
+    -----
 */
 
 .header {
@@ -161,6 +179,42 @@ body {
     text-shadow: var(--txt-outline-sm);
 }
 
+/* Mobile version */
+@media only screen and (max-width: 767px) {
+    .header {
+        height: 256px;
+    }
+
+    .header-content {
+        top: 32px;
+        left: 0;
+
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .header-img-container {
+        width: 128px;
+        height: 128px;
+    }
+
+    .header-img {
+        width: 128px;
+        height: 128px;
+    }
+
+    .header-title {
+        font-size: 32px;
+        margin: 16px 32px;
+        text-shadow: var(--txt-outline-sm);
+    }
+
+    .header-title--subtitle {
+        font-size: 16px;
+        text-shadow: var(--txt-outline-sm);
+    }
+}
+
 /*
     Image overlay effect thingy!!
     These took me 2 hours to align i want to die!!!
@@ -204,8 +258,45 @@ body {
     top: 124px;
 }
 
+/* Mobile version */
+@media only screen and (max-width: 767px) {
+    .header-img-overlay {
+        left: -8px;
+        top: -8px;
+        width: 144px;
+        height: 144px;
+    }
+
+    .header-img-overlay--jj {
+        width: 32px;
+        height: 32px;
+    }
+
+    .header-img-overlay--jj-0 {
+        left: 4px;
+        top: -8px;
+    }
+
+    .header-img-overlay--jj-1 {
+        left: -16px;
+        top: 40px;
+    }
+
+    .header-img-overlay--jj-2 {
+        left: 90px;
+        top: 110px;
+    }
+
+    .header-img-overlay--jj-3 {
+        left: 110px;
+        top: 62px;
+    }
+}
+
 /*
+    -----
     Navbar
+    -----
 */
 
 .navbar {
@@ -233,8 +324,31 @@ body {
     text-align: center;
 }
 
+/* Mobile version */
+@media only screen and (max-width: 767px) {
+    .navbar {
+        border-top: solid 4px #fff;
+        border-bottom: solid 4px #fff;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .navbar > a {
+        padding: 8px;
+        margin: 16px 0;
+
+        border: solid 4px #fff;
+        border-radius: 48px;
+        width: 25%;
+
+        font-size: 12px;
+    }
+}
+
 /*
+    -----
     Sections
+    -----
 */
 
 .section {
@@ -262,8 +376,33 @@ body {
     font-size: 16px;
 }
 
+/* Mobile version */
+@media only screen and (max-width: 767px) {
+    .section {
+        width: calc(100% - 32px);
+        margin: 0;
+        padding: 0 16px;
+        margin-top: 64px;
+
+        text-align: center;
+    }
+
+    .section-title {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .section-title span {
+        left: calc(50% - 24px);
+        bottom: -10px;
+        font-size: 12px;
+    }
+}
+
 /*
+    -----
     Commands
+    -----
 */
 
 .cmd-container {
@@ -313,6 +452,26 @@ body {
     margin: 16px 0;
 }
 
+/* Mobile version */
+@media only screen and (max-width: 767px) {
+    .cmd-container {
+        width: calc(100% - 32px);
+        margin: 0 16px;
+    }
+
+    .cmd-header {
+        width: calc(100% - 32px);
+        height: 128px;
+        margin: 0 16px;
+    }
+
+    .cmd-title {
+        padding: 8px;
+        font-size: 24px;
+        color: #f89ff8;
+    }
+}
+
 /*
     actual commands layout
 */
@@ -349,6 +508,13 @@ body {
     padding: 16px;
     padding-top: 8px;
     font-size: 16px;
+}
+
+/* Mobile version */
+@media only screen and (max-width: 767px) {
+    .cmd-desc {
+        font-size: 14px;
+    }
 }
 
 /*
@@ -458,4 +624,14 @@ body {
     font-size: 12px;
     text-align: center;
     color: #998d97;
+}
+
+/* Mobile version */
+@media only screen and (max-width: 767px) {
+    .footer {
+        margin: 0px;
+        margin-top: 256px;
+        width: 90%;
+        font-size: 8px;
+    }
 }

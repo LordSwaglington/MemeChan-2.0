@@ -310,7 +310,7 @@ body {
 
 .navbar > a {
     padding: 16px;
-    margin: 16px 16px;
+    margin: 16px 32px;
 
     background-color: #fd72fd;
     box-sizing: border-box;
@@ -322,6 +322,7 @@ body {
     font-weight: bold;
     font-size: 16px;
     text-align: center;
+    text-decoration: none;
 }
 
 /* Mobile version */
@@ -352,9 +353,41 @@ body {
 */
 
 .section {
-    width: 512px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    width: 768px;
     margin: 0 auto;
     margin-top: 128px;
+}
+
+.section--reverse {
+    flex-direction: row-reverse;
+}
+
+.section--reverse > .section-content {
+    margin-left: 64px;
+}
+
+.section-img {
+    width: 192px;
+    height: 192px;
+    border-radius: 4px;
+
+    box-shadow: 0 0 8px #00000080;
+}
+
+.section-img--round {
+    border-radius: 100%;
+}
+
+.section-img--noshad {
+    box-shadow: none;
+}
+
+.section-content {
+    max-width: 512px;
 }
 
 .section-title {
@@ -376,6 +409,18 @@ body {
     font-size: 16px;
 }
 
+.section-highlight {
+    color: #cf004f;
+}
+
+.section-smalltext {
+    font-size: 60%;
+}
+
+.section-link {
+    color: #cf004f;
+}
+
 /* Mobile version */
 @media only screen and (max-width: 767px) {
     .section {
@@ -383,8 +428,35 @@ body {
         margin: 0;
         padding: 0 16px;
         margin-top: 64px;
+        flex-direction: column;
 
         text-align: center;
+    }
+
+    .section-content {
+        width: 100%;
+    }
+
+    .section--reverse {
+        flex-direction: column;
+    }
+
+    .section--reverse > .section-content {
+        margin-left: 0px;
+    }
+
+    .section-img {
+        margin-top: 16px;
+    }
+
+    .section-img--round {
+        width: 112px;
+        height: 112px;
+    }
+
+    .section-img--noshad {
+        width: 112px;
+        height: 112px;
     }
 
     .section-title {
@@ -634,4 +706,29 @@ body {
         width: 90%;
         font-size: 8px;
     }
+}
+
+/*
+    -----
+    video box
+    ---
+    i can crop images but not mp4s!
+    small workaround
+    -----
+*/
+
+.video-box {
+    border-radius: 4px;
+    overflow: hidden;
+
+    width: 240px;
+    height: 192px;
+
+    flex-shrink: 0;
+    box-shadow: 0 0 8px #00000080;
+}
+
+.video-box > video {
+    height: 208px;
+    transform: translateY(-16px);
 }

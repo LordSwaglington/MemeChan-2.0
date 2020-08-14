@@ -22,6 +22,7 @@ module.exports = {
 			'DarkHumorAndMemes',
 			'depression_memes',
 			'FutanariMemes',
+			'goodanimemes',
 			'hentaimemes',
 			'meme',
 			'meirl',
